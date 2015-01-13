@@ -10,7 +10,7 @@ sub create_table {
     my $self = shift;
 
     my $sql =<<'CREATESQL';
-CREATE TABLE `notify` (
+CREATE TABLE `notifications` (
     `system`    VARCHAR(50) NOT NULL,
     `subsystem` VARCHAR(50) NOT NULL,
 
@@ -42,7 +42,7 @@ App::OverWatch::Notify::mysql - MySQL backend for App::OverWatch::Notify
 
 =head2 create_table
 
-Create the 'notify' table.
+Create the 'notifications' table.
 
 =cut
 
