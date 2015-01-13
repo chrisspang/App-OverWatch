@@ -30,7 +30,7 @@ CREATE TABLE `servicelocks` (
 CREATESQL
 
     my $ret = $self->{DB}->dbix_run( $sql );
-    return $ret;
+    return $ret == 0 ? 1 : 0;
 }
 
 sub timestamp_calculate_sql {
