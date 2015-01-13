@@ -107,6 +107,9 @@ sub load_config {
         . join(', ', @paths) . "\n"
             if (!defined($rh_conf));
 
+    die "Error: Require 'db_type' to be set in config\n"
+        if (!$rh_conf->{db_type});
+
     $self->{Config} = App::OverWatch::Config->new($rh_conf);
 }
 
