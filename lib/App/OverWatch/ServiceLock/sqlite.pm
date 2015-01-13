@@ -15,7 +15,8 @@ CREATE TABLE servicelocks (
 
     worker    VARCHAR(50) NOT NULL,
 
-    status    VARCHAR(10) NOT NULL, /* UNLOCKED / LOCKED */
+    /* LOCKED/UNLOCKED */
+    status    VARCHAR(10) NOT NULL,
 
     mtime     TIMESTAMP NOT NULL,
 
