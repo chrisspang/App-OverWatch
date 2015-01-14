@@ -62,3 +62,23 @@ sub generate_now_sql {
 }
 
 1;
+
+=head1 NAME
+
+App::OverWatch::ServiceLock::postgres - PostgreSQL backend for App::OverWatch::ServiceLock
+
+=head1 METHODS
+
+=head2 create_table
+
+Create the 'servicelocks' table.
+
+=head2 timestamp_calculate_sql
+
+Return SQL to allow calculation of expiry times.
+
+=head2 generate_now_sql
+
+Return SQL for 'NOW()'.
+
+=cut
