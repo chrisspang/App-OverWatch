@@ -19,7 +19,7 @@ BEGIN
 END;
 $$ language 'plpgsql';
 
-CREATE TYPE dispatch_lock_status AS ENUM ( 'UNLOCKED', 'LOCKED' );
+CREATE TYPE lock_status AS ENUM ( 'UNLOCKED', 'LOCKED' );
 
 CREATE TABLE servicelocks (
     system    VARCHAR(50) PRIMARY KEY NOT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE servicelocks (
 
     worker    VARCHAR(50) NOT NULL,
 
-    status    dispatch_lock_status NOT NULL,
+    status    lock_status NOT NULL,
 
     mtime     TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
@@ -43,7 +43,7 @@ update_mtime();
 CREATESQL
 
     my $ret = $self->{DB}->dbix_run( $sql );
-    return $ret;
+    return $ret == 0 ? 1 : 0;
 }
 
 sub timestamp_calculate_sql {

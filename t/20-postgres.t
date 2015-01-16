@@ -4,6 +4,10 @@ use warnings;
 
 use App::OverWatch;
 
+use lib 't', '.';
+require 'lib.pl';
+require 'servicelock.pl';
+
 use Test::More;
 
 eval {
@@ -13,18 +17,22 @@ if ($@) {
     plan skip_all => "Warning: Couldn't load DBD::Pg - Skipping postgres test";
 }
 
-plan tests => 1;
-
 use_ok("DBD::Pg");
 
-my $config = get_test_config('sqlite');
-
+my $config = get_test_config('postgres');
 note $config;
 
-use_ok("DBD::SQLite");
-
 my $ServiceLock = get_servicelock($config);
+my $DB = $ServiceLock->{DB};
+
+## Remove any existing table
+$DB->dbix_run("DROP TABLE IF EXISTS servicelocks");
+$DB->dbix_run("DROP TYPE IF EXISTS lock_status");
 
 run_servicelock_tests($ServiceLock);
+
+## Remove the table
+#$DB->dbix_run("DROP TABLE servicelocks");
+#$DB->dbix_run("DROP TYPE lock_status");
 
 done_testing();

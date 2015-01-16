@@ -26,6 +26,7 @@ sub connect {
         RaiseError => 1,
         PrintError => 0,
         AutoCommit => 1,
+        sqlite_unicode => 1,
     });
 
     return $conn;

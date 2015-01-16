@@ -1,9 +1,14 @@
 
 use strict;
 use warnings;
+use utf8;
 
 use Test::More;
 use Test::Exception;
+
+binmode Test::More->builder->output, ":encoding(UTF-8)";
+binmode Test::More->builder->failure_output, ":encoding(UTF-8)"; 
+binmode Test::More->builder->todo_output, ":encoding(UTF-8)";
 
 sub get_servicelock {
     my $config = shift;
@@ -48,7 +53,6 @@ sub run_servicelock_tests {
     my $rh_lock = $ServiceLock->get_lock({ system => $s });
     isa_ok($rh_lock, 'App::OverWatch::Lock');
     is($rh_lock->status, 'UNLOCKED', 'Lock is UNLOCKED');
-
     ## Try locking again
     is($ServiceLock->try_lock({ system => $s, worker => $w, text => $t }), 1, "Get lock (succeed)");
 
@@ -69,6 +73,16 @@ sub run_servicelock_tests {
 
     ## Force unlock an already unlocked lock
     is($ServiceLock->force_unlock({ system => $s2 }), 0, "Force unlock (fail as lock not locked)");
+
+    ## utf8 tests
+    {
+        my $char_str = "à á â ã ä å æ ç è é ê ë ì í î ï ð ñ ò ó ô õ ö ÷ ø ù ú û ü ý þ ÿ";
+        is($ServiceLock->try_lock({ system => $s, worker => $w, text => $char_str }), 1, "Get lock (succeed)");
+        my $rh_lock = $ServiceLock->get_lock({ system => $s });
+        isa_ok($rh_lock, 'App::OverWatch::Lock');
+        is($rh_lock->status, 'LOCKED', 'Lock is LOCKED');
+        is($rh_lock->text, $char_str, 'Character string is as expected');
+    }
 }
 
 1;

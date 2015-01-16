@@ -28,6 +28,7 @@ sub connect {
         RaiseError => 1,
         PrintError => 0,
         AutoCommit => 1,
+        pg_enable_utf8 => 1,
     });
 
     return $conn;

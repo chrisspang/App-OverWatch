@@ -28,7 +28,7 @@ sub connect {
         RaiseError => 1,
         PrintError => 0,
         AutoCommit => 1,
-        mysql_enable_utf8 => 0,
+        mysql_enable_utf8 => 1,
     });
 
     return $conn;
