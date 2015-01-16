@@ -1,4 +1,5 @@
 package App::OverWatch::Lock;
+# ABSTRACT: Lock object
 
 use strict;
 use warnings;

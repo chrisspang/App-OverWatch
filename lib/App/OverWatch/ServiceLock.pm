@@ -1,5 +1,6 @@
 
 package App::OverWatch::ServiceLock;
+# ABSTRACT: ServiceLock base class
 
 use strict;
 use warnings;

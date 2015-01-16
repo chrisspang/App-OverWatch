@@ -1,4 +1,5 @@
 package App::OverWatch::ServiceLock::mysql;
+# ABSTRACT: MySQL subclass for ServiceLock
 
 use strict;
 use warnings;

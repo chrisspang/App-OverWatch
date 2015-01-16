@@ -1,4 +1,5 @@
 package Dispatch::Notification;
+# ABSTRACT: Notification object
 
 use strict;
 use warnings;

@@ -1,5 +1,6 @@
 
 package App::OverWatch::Notify;
+# ABSTRACT: Notify base class
 
 use strict;
 use warnings;

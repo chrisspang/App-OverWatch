@@ -1,4 +1,5 @@
 package App::OverWatch::ServiceLock::sqlite;
+# ABSTRACT: SQLite subclass for ServiceLock
 
 use strict;
 use warnings;

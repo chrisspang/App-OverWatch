@@ -1,4 +1,5 @@
 package App::OverWatch::DB::postgres;
+# ABSTRACT: PostgreSQL subclass for OverWatch DB
 
 use strict;
 use warnings;

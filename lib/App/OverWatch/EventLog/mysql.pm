@@ -1,4 +1,5 @@
 package App::OverWatch::EventLog::mysql;
+# ABSTRACT: MySQL subclass for EventLog
 
 use strict;
 use warnings;

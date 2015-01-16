@@ -1,4 +1,5 @@
 package App::OverWatch::DB::sqlite;
+# ABSTRACT: SQLite subclass for OverWatch DB
 
 use strict;
 use warnings;

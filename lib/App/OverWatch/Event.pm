@@ -1,4 +1,5 @@
 package App::OverWatch::Event;
+# ABSTRACT: Event object
 
 use strict;
 use warnings;

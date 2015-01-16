@@ -1,4 +1,5 @@
 package App::OverWatch::ServiceLock::postgres;
+# ABSTRACT: PostgreSQL subclass for ServiceLock
 
 use strict;
 use warnings;

@@ -1,6 +1,6 @@
 #!/usr/bin/env perl
 #
-# servicelock - Manage App::OverWatch locks
+# PODNAME: servicelock - Interface to App::OverWatch DB locks
 #
 use strict;
 use warnings;
@@ -179,10 +179,6 @@ sub do_update {
         die "Could not update lock on '$system'\n";
     }
 }
-
-=head1 NAME
-
-servicelock - Interface to App::OverWatch DB locks
 
 =head1 SYNOPSIS
 

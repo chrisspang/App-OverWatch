@@ -1,4 +1,5 @@
 package App::OverWatch::EventLog;
+# ABSTRACT: EventLog base class
 
 use strict;
 use warnings;

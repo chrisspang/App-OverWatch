@@ -1,4 +1,5 @@
 package App::OverWatch::DB::mysql;
+# ABSTRACT: MySQL subclass for OverWatch DB
 
 use strict;
 use warnings;

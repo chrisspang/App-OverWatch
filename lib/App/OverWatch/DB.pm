@@ -1,4 +1,5 @@
 package App::OverWatch::DB;
+# ABSTRACT: Database connector base class
 
 use strict;
 use warnings;

@@ -1,4 +1,5 @@
 package App::OverWatch::Config;
+# ABSTRACT: Config object
 
 use strict;
 use warnings;

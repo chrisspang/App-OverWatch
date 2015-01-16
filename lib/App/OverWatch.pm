@@ -1,5 +1,5 @@
 package App::OverWatch;
-
+# ABSTRACT: Watch over your infrastructure
 use strict;
 use warnings;
 
@@ -126,10 +126,6 @@ sub _db {
 
 __END__
 
-=head1 NAME
-
-App::OverWatch - Watch over your infrastructure
-
 =head1 SYNOPSIS
 
   use App::OverWatch;
@@ -170,9 +166,3 @@ Dies on any missing requirements.  Returns the command.
 
 Loads OverWatch DB connection configuration from a text file, by
 default ~/.overwatch.conf.
-
-=head1 AUTHOR
-
-  Chris Hughes <chris@somethingorother>
-
-=cut

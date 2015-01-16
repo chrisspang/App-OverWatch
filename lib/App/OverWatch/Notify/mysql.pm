@@ -1,4 +1,5 @@
 package App::OverWatch::Notify::mysql;
+# ABSTRACT: MySQL subclass for Notify
 
 use strict;
 use warnings;
