@@ -19,5 +19,5 @@ nytprof.out
 *.bs
 .#*
 *~
-App-OverWatch-0.001/
-App-OverWatch-0.001.tar.gz
+App-OverWatch-?.*/
+App-OverWatch-?.*.tar.gz
