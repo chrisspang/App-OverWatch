@@ -124,8 +124,6 @@ sub _db {
 
 1;
 
-__END__
-
 =head1 SYNOPSIS
 
   use App::OverWatch;
@@ -133,6 +131,25 @@ __END__
   $OverWatch->load_config();
 
   my $ServiceLock = $OverWatch->ServiceLock();
+
+=head1 DESCRIPTION
+
+Designed to provide a simple framework to give some oversight to applications
+running in a distributed environment.  Applications can quickly
+register/release simple locks, register and send notifications, and log events
+to a database using a very simple interface.
+
+=head1 CONFIGURATION
+
+Database configuration is loaded from a config file by load_config() and
+looks as follows:
+
+  db_type = postgres
+  user = test
+  password = test
+  dsn = DBI:Pg:database=test
+
+Valid db_types are mysql, postgres, sqlite.
 
 =head1 METHODS
 

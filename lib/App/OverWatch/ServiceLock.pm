@@ -226,6 +226,12 @@ App::OverWatch::ServiceLock - App::OverWatch Locking System
   [...]
   my $ServiceLock = $OverWatch->ServiceLock();
 
+=head1 DESCRIPTION
+
+Provides a simple mechanism for allowing the locking of named resources
+via a central database.  Locks can have expiry periods, so could perhaps be
+considered leases.
+
 =head1 METHODS
 
 =head2 new
