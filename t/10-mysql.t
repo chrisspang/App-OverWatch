@@ -17,10 +17,12 @@ if ($@) {
     plan skip_all => "Warning: Couldn't load DBD::mysql - Skipping mysql test";
 }
 
-use_ok("DBD::mysql");
-
 my $config = get_test_config('mysql');
-note $config;
+if (!$config) {
+    plan skip_all => "No mysql.conf found - Skipping DB test";
+}
+
+use_ok("DBD::mysql");
 
 my $ServiceLock = get_servicelock($config);
 my $DB = $ServiceLock->{DB};

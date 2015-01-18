@@ -17,10 +17,12 @@ if ($@) {
     plan skip_all => "Warning: Couldn't load DBD::Pg - Skipping postgres test";
 }
 
-use_ok("DBD::Pg");
-
 my $config = get_test_config('postgres');
-note $config;
+if (!$config) {
+    plan skip_all => "No postgres.conf found - Skipping DB test";
+}
+
+use_ok("DBD::Pg");
 
 my $ServiceLock = get_servicelock($config);
 my $DB = $ServiceLock->{DB};
