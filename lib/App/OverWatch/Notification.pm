@@ -1,4 +1,4 @@
-package Dispatch::Notification;
+package App::OverWatch::Notification;
 # ABSTRACT: Notification object
 
 use strict;
@@ -17,8 +17,6 @@ has fired     => ( is => 'ro' );
 has text      => ( is => 'ro' );
 
 1;
-
-
 
 =head1 ATTRIBUTES
 
