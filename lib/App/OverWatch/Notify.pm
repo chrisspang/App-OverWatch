@@ -19,7 +19,7 @@ sub new {
 
     my $type = $DB->type();
 
-    my $subclass = "$class::$type";
+    my $subclass = $class . '::' . $type;
     load($subclass);
 
     my $self = bless( {}, $subclass );

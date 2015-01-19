@@ -17,7 +17,7 @@ sub new {
 
     my $type = $Config->db_type();
 
-    my $subclass = "$class::$type";
+    my $subclass = $class . '::' . $type;
     load($subclass);
 
     my $self = bless( {}, $subclass );
