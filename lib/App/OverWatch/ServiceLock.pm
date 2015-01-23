@@ -264,11 +264,14 @@ Return an App::OverWatch::Lock object for a given lock.
 
 Attempt to gain a lock.
 
-  $ServiceLock->try_unlock({
+  $ServiceLock->try_lock({
      system => $system,
      worker => 'myworkerid',
+     text   => 'Why we want the lock',
      expiry => $expiry_in_minutes,   # Optional
-  });
+   });
+
+Returns 1 on success, 0 otherwise.
 
 =head2 try_update
 
