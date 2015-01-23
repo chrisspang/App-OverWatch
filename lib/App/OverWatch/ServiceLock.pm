@@ -236,7 +236,7 @@ considered leases.
 
 =head2 new
 
-Create an App::OverWatch::EventLog object - usualy handled by App::OverWatch.
+Create an App::OverWatch::EventLog object - usually handled by App::OverWatch.
 
 =head2 create_lock
 
