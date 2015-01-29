@@ -188,7 +188,8 @@ sub do_update {
   Commands:
 
     --check
-    --create
+    --create_lock
+    --create_table
     --force_unlock
     --list
     --lock
