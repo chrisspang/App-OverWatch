@@ -1,5 +1,8 @@
 package App::OverWatch;
+
 # ABSTRACT: Watch over your infrastructure
+# VERSION
+
 use strict;
 use warnings;
 
