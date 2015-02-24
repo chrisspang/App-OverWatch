@@ -92,8 +92,9 @@ sub load_config {
     if (defined($path)) {
         @paths = ( $path );
     } else {
-        @paths = ( $ENV{HOME} . "/.overwatch.conf",
-                       "/etc/overwatch.conf" );
+        push(@paths, $ENV{HOME} . "/.overwatch.conf")
+            if (defined( $ENV{HOME} ));
+        push(@paths, "/etc/overwatch.conf");
     }
 
   FILE:
